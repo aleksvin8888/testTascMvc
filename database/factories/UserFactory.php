@@ -24,9 +24,6 @@ class UserFactory extends Factory
     public function definition()
     {
 
-        $departments = Department::select('id')->get();
-
-
         return [
             'first_name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
@@ -36,7 +33,6 @@ class UserFactory extends Factory
             'address' => $this->faker->address,
             'phone' => $this->faker->phoneNumber,
             'comment' => $this->faker->text(20),
-            'department_id' => $departments->random()
         ];
     }
 }

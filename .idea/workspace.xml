@@ -2,11 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb225908-fdb4-4740-8615-ed5123c4396b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_08_30_141708_create_department_user_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/brand/bootstrap-logo-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/brand/bootstrap-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/dist/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/dist/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bsAssets/navbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/department/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/department/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/department/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/department/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/includes/navbar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/50d2438b-8905-4113-97c1-3b4a7322e8a9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/50d2438b-8905-4113-97c1-3b4a7322e8a9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Department.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_08_30_110348_update_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_08_30_110348_update_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DepartmentSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DepartmentSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +45,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -157,13 +191,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeders" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\lrTest.local\app\Http\Controllers" />
+      <recent name="C:\OpenServer\domains\lrTest.local\public" />
+      <recent name="C:\OpenServer\domains\lrTest.local\resources\views" />
       <recent name="C:\OpenServer\domains\lrTest.local\database\seeders" />
     </key>
   </component>
@@ -181,7 +218,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661855876080</updated>
-      <workItem from="1661855877568" duration="7002000" />
+      <workItem from="1661855877568" duration="14449000" />
     </task>
     <servers />
   </component>
