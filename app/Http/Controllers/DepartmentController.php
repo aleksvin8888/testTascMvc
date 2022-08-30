@@ -10,7 +10,9 @@ class DepartmentController extends Controller
 
     public function index()
     {
-        $departments = Department::with('users')->get();
+        $departments = Department::with('users')
+            ->withCount('users')
+            ->get();
 
         return view('department.index', compact('departments'));
     }
