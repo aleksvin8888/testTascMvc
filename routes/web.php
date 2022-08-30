@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 
-Route::resource('users', UserController::class)->names('users');
+Route::resource('users', UserController::class)
+    ->only([ "index", 'show', 'store'])
+    ->names('users');
 
 Route::resource('departments', DepartmentController::class)->names('departments');

@@ -9,50 +9,66 @@
             <div class="bg-light p-5 rounded">
                 <div class="col-sm-8 mx-auto">
                     <h3>Add new user</h3>
-                    <form action="" method="post">
+                    <form action="{{route('users.store')}}" method="post">
+                        @csrf
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Email address</label>
                             <input class="form-control"
                                    name="email"
+                                   value="{{old('email')}}"
                                    type="email"
                                    id="inputEmail"
-                                   aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                   aria-describedby="emailHelp"
+                                   required>
+                            @error('email')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="inputFirstName" class="form-label">First name</label>
                             <input class="form-control"
                                    name="first_name"
+                                   value="{{old('first_name')}}"
                                    type="text"
-                                   id="inputFirstName">
+                                   id="inputFirstName"
+                                   required>
+                            @error('first_name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="inputAddress" class="form-label">Address</label>
                             <input class="form-control"
                                    name="address"
+                                   value="{{old('address')}}"
                                    type="text"
                                    id="inputAddress">
+                            @error('address')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="inputPhone" class="form-label">Phone</label>
                             <input class="form-control"
                                    name="phone"
+                                   value="{{old('phone')}}"
                                    type="text"
                                    id="inputPhone">
+                            @error('phone')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="inputComment" class="form-label">Comment</label>
-                            <input name="comment"
-                                   type="text"
-                                   class="form-control"
-                                   id="inputComment">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputDepartment" class="form-label">Select Department</label>
-                            <input name="comment"
-                                   type="text"
-                                   class="form-control"
-                                   id="inputDepartment">
+                            <label for="inputComment" class="form-label">Add Comment</label>
+                            <textarea type="text"
+                                      name="comment"
+                                      class="form-control"
+                                      id="inputComment"
+                                      rows="10"
+                                      placeholder="Add Comment">{{old( 'comment' )}}</textarea>
+                            @error('comment')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="mb-3">
@@ -70,6 +86,9 @@
                                 @endforeach
 
                             </select>
+                            @error('department_id')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
 

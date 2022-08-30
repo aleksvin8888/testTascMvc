@@ -73,6 +73,7 @@
 
 
     @include('layouts.includes.navbar')
+    @include('layouts.includes.success')
 
     @yield('mainContent')
 
