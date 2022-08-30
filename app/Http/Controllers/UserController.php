@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Department;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class DepartmentController extends Controller
+class UserController extends Controller
 {
 
     public function index()
     {
-        $departments = Department::with('users')->get();
+        $users = User::with('department')->get();
 
-        return view('department.index', compact('departments'));
+        return view('user.index', compact('users'));
     }
 
 
@@ -28,11 +28,10 @@ class DepartmentController extends Controller
     }
 
 
-    public function show(Department $department)
+    public function show(User $user)
     {
-        $department->loadCount('users');
-
-        return view("department.show", compact('department'));
+        $user->load('department');
+        return view('user.show', compact('user'));
     }
 
 

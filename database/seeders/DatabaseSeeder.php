@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
             DepartmentSeeder::class,
         ]);
 
+        User::factory()
+            ->count(20)
+            ->create();
+
     }
 }

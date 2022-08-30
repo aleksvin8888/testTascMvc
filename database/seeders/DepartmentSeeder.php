@@ -69,9 +69,7 @@ class DepartmentSeeder extends Seeder
 
 
         foreach($departments as $department) {
-           $department = Department::create($department);
-           $user = User::factory()->create();
-           $department->users()->sync($user);
+           Department::create($department);
         }
     }
 }

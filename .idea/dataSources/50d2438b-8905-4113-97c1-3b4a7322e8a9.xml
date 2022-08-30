@@ -1270,99 +1270,98 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="303" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="304" parent="280" name="department_user">
+    <table id="304" parent="280" name="departments">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="305" parent="280" name="departments">
+    <table id="305" parent="280" name="failed_jobs">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="306" parent="280" name="failed_jobs">
+    <table id="306" parent="280" name="migrations">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="307" parent="280" name="migrations">
+    <table id="307" parent="280" name="password_resets">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="308" parent="280" name="password_resets">
+    <table id="308" parent="280" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="309" parent="280" name="users">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
-    </table>
-    <column id="310" parent="304" name="id">
+    <column id="309" parent="304" name="id">
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="311" parent="304" name="department_id">
-      <DataType>bigint unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="312" parent="304" name="user_id">
-      <DataType>bigint unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="313" parent="304" name="department_user_department_id_foreign">
-      <ColNames>department_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>departments</RefTableName>
-    </foreign-key>
-    <foreign-key id="314" parent="304" name="department_user_user_id_foreign">
-      <ColNames>user_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <index id="315" parent="304" name="department_user_department_id_user_id_unique">
-      <ColNames>department_id
-user_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="316" parent="304" name="department_user_user_id_foreign">
-      <ColNames>user_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="317" parent="304" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <key id="318" parent="304" name="department_user_department_id_user_id_unique">
-      <ColNames>department_id
-user_id</ColNames>
-      <UnderlyingIndexName>department_user_department_id_user_id_unique</UnderlyingIndexName>
-    </key>
-    <column id="319" parent="305" name="id">
-      <DataType>bigint unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="320" parent="305" name="title">
+    <column id="310" parent="304" name="title">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="321" parent="305" name="created_at">
+    <column id="311" parent="304" name="created_at">
       <DataType>timestamp|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="322" parent="305" name="updated_at">
+    <column id="312" parent="304" name="updated_at">
       <DataType>timestamp|0s</DataType>
       <Position>4</Position>
     </column>
-    <index id="323" parent="305" name="departments_title_unique">
+    <index id="313" parent="304" name="departments_title_unique">
       <ColNames>title</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="314" parent="304" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="315" parent="304" name="departments_title_unique">
+      <ColNames>title</ColNames>
+      <UnderlyingIndexName>departments_title_unique</UnderlyingIndexName>
+    </key>
+    <column id="316" parent="305" name="id">
+      <DataType>bigint unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="317" parent="305" name="uuid">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="318" parent="305" name="connection">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="319" parent="305" name="queue">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="320" parent="305" name="payload">
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="321" parent="305" name="exception">
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="322" parent="305" name="failed_at">
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <index id="323" parent="305" name="failed_jobs_uuid_unique">
+      <ColNames>uuid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
@@ -1371,160 +1370,124 @@ user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="325" parent="305" name="departments_title_unique">
-      <ColNames>title</ColNames>
-      <UnderlyingIndexName>departments_title_unique</UnderlyingIndexName>
-    </key>
-    <column id="326" parent="306" name="id">
-      <DataType>bigint unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="327" parent="306" name="uuid">
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="328" parent="306" name="connection">
-      <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="329" parent="306" name="queue">
-      <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="330" parent="306" name="payload">
-      <DataType>longtext|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="331" parent="306" name="exception">
-      <DataType>longtext|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <column id="332" parent="306" name="failed_at">
-      <DataType>timestamp|0s</DataType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-    </column>
-    <index id="333" parent="306" name="failed_jobs_uuid_unique">
-      <ColNames>uuid</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="334" parent="306" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <key id="335" parent="306" name="failed_jobs_uuid_unique">
+    <key id="325" parent="305" name="failed_jobs_uuid_unique">
       <ColNames>uuid</ColNames>
       <UnderlyingIndexName>failed_jobs_uuid_unique</UnderlyingIndexName>
     </key>
-    <column id="336" parent="307" name="id">
+    <column id="326" parent="306" name="id">
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="337" parent="307" name="migration">
+    <column id="327" parent="306" name="migration">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="338" parent="307" name="batch">
+    <column id="328" parent="306" name="batch">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <key id="339" parent="307" name="PRIMARY">
+    <key id="329" parent="306" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="340" parent="308" name="email">
+    <column id="330" parent="307" name="email">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="341" parent="308" name="token">
+    <column id="331" parent="307" name="token">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="342" parent="308" name="created_at">
+    <column id="332" parent="307" name="created_at">
       <DataType>timestamp|0s</DataType>
       <Position>3</Position>
     </column>
-    <index id="343" parent="308" name="password_resets_email_index">
+    <index id="333" parent="307" name="password_resets_email_index">
       <ColNames>email</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="344" parent="309" name="id">
+    <column id="334" parent="308" name="id">
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="345" parent="309" name="first_name">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="335" parent="308" name="department_id">
+      <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="346" parent="309" name="email">
+    <column id="336" parent="308" name="email">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="347" parent="309" name="email_verified_at">
+    <column id="337" parent="308" name="email_verified_at">
       <DataType>timestamp|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="348" parent="309" name="password">
+    <column id="338" parent="308" name="password">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="349" parent="309" name="remember_token">
+    <column id="339" parent="308" name="remember_token">
       <DataType>varchar(100)|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="350" parent="309" name="created_at">
+    <column id="340" parent="308" name="created_at">
       <DataType>timestamp|0s</DataType>
       <Position>7</Position>
     </column>
-    <column id="351" parent="309" name="updated_at">
+    <column id="341" parent="308" name="updated_at">
       <DataType>timestamp|0s</DataType>
       <Position>8</Position>
     </column>
-    <column id="352" parent="309" name="address">
+    <column id="342" parent="308" name="first_name">
       <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="353" parent="309" name="phone">
+    <column id="343" parent="308" name="address">
       <DataType>varchar(255)|0s</DataType>
       <Position>10</Position>
     </column>
-    <column id="354" parent="309" name="comment">
-      <DataType>text|0s</DataType>
+    <column id="344" parent="308" name="phone">
+      <DataType>varchar(255)|0s</DataType>
       <Position>11</Position>
     </column>
-    <index id="355" parent="309" name="users_email_unique">
+    <column id="345" parent="308" name="comment">
+      <DataType>text|0s</DataType>
+      <Position>12</Position>
+    </column>
+    <foreign-key id="346" parent="308" name="users_department_id_foreign">
+      <ColNames>department_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>departments</RefTableName>
+    </foreign-key>
+    <index id="347" parent="308" name="users_email_unique">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="356" parent="309" name="PRIMARY">
+    <index id="348" parent="308" name="users_department_id_foreign">
+      <ColNames>department_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="349" parent="308" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="357" parent="309" name="users_email_unique">
+    <key id="350" parent="308" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>

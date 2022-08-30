@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\Department
@@ -34,9 +34,9 @@ class Department extends Model
     ];
 
 
-    public function users(): BelongsToMany
+    public function users(): HasMany
     {
-        return $this->belongsToMany(User::class, 'department_user');
+        return $this->hasMany(User::class);
     }
 
 }

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index'])->name('main');
+
+Route::resource('users', UserController::class)->names('users');
+
+Route::resource('departments', DepartmentController::class)->names('departments');
