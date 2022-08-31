@@ -37,13 +37,13 @@
    - DB_USERNAME=user_name   
    - DB_PASSWORD=user_pass
    
-5 прописати ключ laravel
+5. прописати ключ laravel
     - php artisan key:generat
-6  запустити міграції 
+6.  запустити міграції 
     - php artisan migrate --seed
-7  установити пакети composer
+7.  установити пакети composer
     - composer install
-8  установити пакети npm 
+8.  установити пакети npm 
     - npm init
     - npm run dev
-9  запуститисервер 
+9.  запуститисервер 
