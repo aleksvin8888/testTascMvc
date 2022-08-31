@@ -39,11 +39,11 @@
    
 5 прописати ключ laravel
     - php artisan key:generat
-5  запустити міграції 
+6  запустити міграції 
     - php artisan migrate --seed
-6  установити пакети composer
+7  установити пакети composer
     - composer install
-7  установити пакети npm 
+8  установити пакети npm 
     - npm init
     - npm run dev
-8  запуститисервер 
+9  запуститисервер 
