@@ -10,6 +10,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
     <link href="{{asset('bsAssets/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -84,6 +85,8 @@
 
 
 <script src="{{asset('bsAssets/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
+
 
 </body>
 </html>

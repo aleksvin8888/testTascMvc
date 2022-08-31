@@ -22,4 +22,5 @@ Route::resource('users', UserController::class)
     ->only([ "index", 'show', 'store'])
     ->names('users');
 
+Route::get('department/delete/{department}', [DepartmentController::class, 'DepartmentModalAjaxDelete'])->name('department.modal.ajax.delete');
 Route::resource('departments', DepartmentController::class)->names('departments');

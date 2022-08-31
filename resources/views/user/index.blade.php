@@ -19,7 +19,10 @@
                             <tr>
                                 <td>{{$user->id}}</td>
                                 <td>
-                                    <a href="{{route('users.show', $user)}}" >{{$user->first_name}}</a>
+                                    <a class="text-decoration-none "
+                                        href="{{route('users.show', $user)}}" >
+                                        {{$user->first_name}}
+                                    </a>
                                 </td>
                                 <td>{{$user->email}} </td>
                                 <td>{{$user->department->title}} </td>
